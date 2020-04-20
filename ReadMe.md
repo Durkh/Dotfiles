@@ -1,4 +1,4 @@
-Here in this repo I have my Arch i3 dotfiles
+Here in this repo I have my Arch i3 dotfiles:
 
 #Dotfiles
 
