@@ -6,7 +6,7 @@ Here in this repo I have my Arch i3 dotfiles:
 * [i3](tree/master/i3)
 * [polybar](tree/master/polybar)
 * [URXVT](tree/master/urxvt)
-* [wallpaper](blob/master/Screenshots/wallpaper.jpg)
+* [wallpaper](Screenshots/wallpaper.jpg)
 
 *click to go to the config file*
 
