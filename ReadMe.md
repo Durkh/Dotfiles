@@ -26,7 +26,7 @@ Fish git integration and common shell
 
 ## Informations
 
-clorscheme generated with [pywal](https://github.com/dylanaraps/pywal) from wallpaper
-the cholorscheme applies on every app of URXVT and is integrated with polybar using system variables
+clorscheme generated with [pywal](https://github.com/dylanaraps/pywal) from wallpaper.
+the cholorscheme applies on every app of URXVT and is integrated with polybar using system variables.
 
 fish theme is agnoster, avaliabe on [omf](https://github.com/oh-my-fish/oh-my-fish)
