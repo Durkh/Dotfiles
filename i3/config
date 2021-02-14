@@ -293,6 +293,9 @@ exec --no-startup-id brave
 # applications that are not installed will not start
 # you may see a wheel - hashtag out things you do not want
 
+#keyboard
+exec --no-startup-id setxkbmap -layout us -variant intl
+
 #polkit
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 
@@ -420,15 +423,15 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse sset Master '
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -D pulse sset Master '5%-'"
 bindsym XF86AudioMute exec --no-startup-id "amixer -D pulse set Master toggle"
 #https://github.com/acrisci/playerctl/
+
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86AudioStop exec --no-startup-id playerctl stop
-#bindsym XF86AudioPlay exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-#bindsym XF86AudioNext exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
-#bindsym XF86AudioPrev exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-#bindsym XF86AudioStop exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
 
+bindsym Mod1+w exec --no-startup-id playerctl play-pause
+bindsym Mod1+e exec --no-startup-id playerctl next
+bindsym Mod1+q exec --no-startup-id playerctl previous
 
 #####################################################################################################################
 #################                          xbacklight                                               #################
@@ -548,17 +551,6 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-
-
-
-#####################################################################################################################
-#################                          picom of i3wm                                          #################
-#####################################################################################################################
-
-#if you want transparency on non-focused windows, ...
-exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
-
-bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 
 #####################################################################################################################
 #####################################################################################################################

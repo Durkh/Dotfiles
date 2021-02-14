@@ -1,0 +1,6 @@
+
+i3-gaps rofi python-pywal rxvt-unicode xorg-xrandr ranger dmenu feh nitrogen alsa-utils playerctl
+
+
+(AUR)
+polybar siji font ttf-windows ttf-unifont
