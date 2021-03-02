@@ -312,7 +312,7 @@ exec --no-startup-id volumeicon &
 exec --no-startup-id xrandr --output HDMI1 --auto --left-of eDP1
 
 #compositor
-exec --no-startup-id picom &
+exec --no-startup-id picom -b --config ~/.config/picom/picom.conf &
 
 #wal set colors
 exec --no-startup-id wal -R
