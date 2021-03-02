@@ -91,7 +91,7 @@ bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#fea63
 bindsym $mod+F11 exec --no-startup-id rofi -show run -fullscreen -font "Noto Sans 13"
 
 # start rofi small
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 
 
@@ -295,6 +295,9 @@ exec --no-startup-id brave
 
 #keyboard
 exec --no-startup-id setxkbmap -layout us -variant intl
+
+#mouse
+exec --no-startup-id ~/.config/i3/scripts/mouse.sh
 
 #polkit
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
