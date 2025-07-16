@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/go/bin:$HOME/go/bin:/home/$USER/.local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -105,6 +105,9 @@ export CUDACXX=/usr/local/cuda/bin/nvcc
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
 alias ccat='pygmentize -g'
 alias wezterm='flatpak run org.wezfurlong.wezterm'
+alias ll='eza -lbh --icons --color=always --git'
+alias lt='eza -lbhT --git --color'
+alias ltl='eza -lbhT --git --color | less'
+alias calc=bc
