@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$PATH:/usr/local/go/bin:$HOME/.local/bin:$HOME/go/bin
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/go/bin:$HOME/go/bin:/home/$USER/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/Ekank/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -106,4 +106,5 @@ export CUDACXX=/usr/local/cuda/bin/nvcc
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source /home/Ekank/Documentos/compiling/setenv_AOCC.sh
+alias ccat='pygmentize -g'
+alias wezterm='flatpak run org.wezfurlong.wezterm'

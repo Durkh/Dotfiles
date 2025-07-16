@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/egidio/Documents/esp-idf/examples/protocols/http_server/restful_server/main'
+let g:netrw_dirhist_7='/home/egidio/Documents/TCC/TCC/code/TCC-code/Pico2/main'
+let g:netrw_dirhist_6='/home/egidio/Documents/TCC/TCC/code/TCC-code/Pico2'
+let g:netrw_dirhist_5='/home/egidio/Documents/TCC/TCC/code/TCC-code'
+let g:netrw_dirhist_4='/home/egidio/Documents/TCC/TCC/code/TCC-code/STM32F411C6'
+let g:netrw_dirhist_3='/home/egidio/Documents/TCC/TCC/code/TCC-code/STM32F411C6/Core'
+let g:netrw_dirhist_2='/home/egidio/Documents/TCC/tcc codes/freertos-pico/hello_freertos'
+let g:netrw_dirhist_1='/home/egidio/Documents/TCC/tcc codes/freertos-pico'
+let g:netrw_dirhist_0='/home/egidio/Documents/pico-sdk/tools'
+let g:netrw_dirhist_9='/home/egidio/Documents/pico-sdk/tools/pioasm'
