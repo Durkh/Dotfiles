@@ -5,9 +5,34 @@ LABEL description="base workspace"
 RUN \
 	pacman-key --init && \
 	pacman-key --populate && \
-	pacman -Syyu --noconfirm base-devel sudo git vim wget which bat duf oh-my-zsh tree btop glow ranger
+	pacman -Syyu --noconfirm base-devel sudo git go
 
 RUN sed -i 's/# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
+RUN sed -i 's/^#ParallelDownloads = 5/ParallelDownloads = 20/' /etc/pacman.conf
 
+#installing yay
+RUN useradd -m builder && \
+    echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+USER builder
+WORKDIR /home/builder
+
+RUN \
+    git clone https://aur.archlinux.org/yay.git && \
+    cd yay && \
+    makepkg -si --noconfirm
+
+USER root
+WORKDIR /
+
+RUN userdel -r builder && \
+    sed -i '/builder/d' /etc/sudoers
+
+RUN pacman -Rsc --noconfirm go
+
+RUN pacman -Syu --noconfirm vim wget which bat duf tree btop glow ranger zsh
 RUN pacman -Scc --noconfirm
 
+RUN sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
+CMD /bin/zsh
