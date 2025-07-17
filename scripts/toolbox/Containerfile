@@ -1,0 +1,13 @@
+FROM archlinux:latest
+
+LABEL description="base workspace"
+
+RUN \
+	pacman-key --init && \
+	pacman-key --populate && \
+	pacman -Syyu --noconfirm base-devel sudo git vim wget which bat duf oh-my-zsh tree btop glow ranger
+
+RUN sed -i 's/# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
+
+RUN pacman -Scc --noconfirm
+

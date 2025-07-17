@@ -4,10 +4,10 @@
 set -e
 
 # Define the list of packages to install
-PACKAGES_COMMON="git wezterm zsh exa tree btop glow ranger"
-PACKAGES_APT="" # Wezterm might need a different installation method on Debian/Ubuntu
-PACKAGES_DNF="" # Wezterm might need a different installation method on Fedora
-PACKAGES_YAY="wezterm" # Git, zsh, exa, tree, btop are in official repos, Wezterm often in AUR
+PACKAGES_COMMON="git zsh"
+PACKAGES_APT="podman-toolbox flatpak" 
+PACKAGES_DNF="toolbox flatpak" 
+PACKAGES_YAY="toolbox wezterm" 
 
 # --- Helper Functions ---
 print_info() {
@@ -51,29 +51,28 @@ if [[ "$OS" == "ubuntu" || "$OS" == "debian" || "$OS_LIKE" == *"debian"* ]]; the
     sudo apt update
     sudo apt install -y $PACKAGES_COMMON $PACKAGES_APT
 
-    # Wezterm installation for Debian/Ubuntu (often requires manual download or PPA)
+    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+    # Wezterm installation
     if ! command -v wezterm &> /dev/null; then
         print_info "Attempting to install WezTerm for Debian/Ubuntu..."
-        # Instructions from https://wezfurlong.org/wezterm/install/linux.html#debian-and-ubuntu
-        curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
-        echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
-        sudo apt update
-        sudo apt install -y wezterm
+        flatpak install flathub org.wezfurlong.wezterm
     else
         print_info "Wezterm already installed."
     fi
+
     print_success "APT packages installed."
 
 elif [[ "$OS" == "fedora" ]]; then
     print_info "Using dnf package manager."
     sudo dnf install -y $PACKAGES_COMMON $PACKAGES_DNF
 
-    # Wezterm installation for Fedora (often available via COPR or Flatpak)
+    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+    # Wezterm installation
     if ! command -v wezterm &> /dev/null; then
         print_info "Attempting to install WezTerm for Fedora..."
-        # Instructions from https://wezfurlong.org/wezterm/install/linux.html#fedora-and-centos-stream
-        sudo dnf copr enable wezfurlong/wezterm-nightly -y
-        sudo dnf install -y wezterm
+        flatpak install flathub org.wezfurlong.wezterm
     else
         print_info "Wezterm already installed."
     fi
