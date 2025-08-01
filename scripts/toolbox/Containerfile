@@ -30,7 +30,7 @@ RUN userdel -r builder && \
 
 RUN pacman -Rsc --noconfirm go
 
-RUN pacman -Syu --noconfirm vim wget which bat duf tree btop glow ranger zsh
+RUN pacman -Syu --noconfirm vim wget which bat duf tree btop glow ranger zsh clang cmake ripgrep fzf ctags man less
 RUN pacman -Scc --noconfirm
 
 RUN sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
