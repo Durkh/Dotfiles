@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-source .custom_path
+if [ -f "$HOME/.custom_path"]; then
+    source .custom_path
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -9,7 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-if [ -f /run/.toolboxenv ]; then
+if [ -f "/run/.toolboxenv" ]; then
 	ZSH_THEME="afowler"
 else
 	ZSH_THEME="robbyrussell"
@@ -47,7 +49,7 @@ fi
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
@@ -75,7 +77,7 @@ fi
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git dnf sudo golang colored-man-pages colorize zsh-autosuggestions zsh-syntax-highlighting toolbox)
+plugins=(git dnf archlinux debian sudo colored-man-pages colorize zsh-autosuggestions zsh-syntax-highlighting toolbox)
 
 source $ZSH/oh-my-zsh.sh
 
