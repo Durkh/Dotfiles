@@ -1,12 +1,10 @@
-Here in this repo I have my Arch i3 dotfiles:
+Here in this repo I have my dotfiles:
 
 # Dotfiles
 
-* [fish shell](tree/master/fish)
-* [i3](tree/master/i3)
-* [polybar](tree/master/polybar)
-* [URXVT](tree/master/urxvt)
-* [wallpaper](Screenshots/wallpaper.jpg)
+* [zshrc](tree/gnome/zsh/,zshrc)
+* [wezterm](tree/gnome/wezterm/.wezterm.lua)
+* [toolbox](tree/gnome/scripts/toolbox/Containerfile)
 
 *click to go to the config file*
 
